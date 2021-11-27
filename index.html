@@ -9,7 +9,7 @@
     <script src="/scripts/script.js"></script>
   </head>
   <body>
-    <form class='custom-form' onsubmit="return validateForm()">
+    <form class='custom-form'>
       <label for="email">Adres e-mail</label>
       <input type="email" id="email" placeholder="example@example.com">
 
@@ -29,7 +29,7 @@
       <input type="url" id="www" placeholder="https://www.example.com" pattern="https://.*">
 
       <label for="path">Ścieżka do pliku</label>
-      <input type="text" id="path" placeholder="C:\windows\temp">
+      <input type="text" id="path" placeholder="C:\windows\temp" pattern="[a-zA-Z]:(\[a-z]+)+">
 
       <label for="path_2">Ścieżka do pliku (znaki)</label>
       <input type="text" id="path_2" placeholder="C:\wiNdowS\temP">
@@ -39,8 +39,6 @@
 
       <label for="phone">Numer telefonu</label>
       <input type="text" id="phone" placeholder="730-123-274" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}">
-
-      <input class='custom-form-submit-button' type="submit" value="Wyślij">
     </form>
   </body>
 </html>
