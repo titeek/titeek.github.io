@@ -37,5 +37,14 @@ function validateForm() {
     cardId.className="input-valid";
   }
 
+  let www = document.querySelector('#www');
+  const wwwRegexp = new RegExp('https://.*');
+  if (!www.value.match(wwwRegexp) || !www.value) {
+    www.className="input-invalid";
+    isValidate = false;
+  } else {
+    www.className="input-valid";
+  }
+
   return false;
 }
