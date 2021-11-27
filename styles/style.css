@@ -1,0 +1,29 @@
+.custom-form > input {
+  display: block;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  border: 1px solid #000000;
+  padding: 4px;
+}
+
+/* .custom-form > input:placeholder-shown {
+  border: 1px solid #000000;
+} */
+
+.custom-form > .input-valid  {
+  border: 1px solid green;
+}
+
+.custom-form > .input-invalid {
+  border: 1px solid red;
+}
+
+.custom-form > label {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.custom-form > .custom-form-submit-button {
+  margin-top: 16px;
+  padding: 4px 12px;
+}

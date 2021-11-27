@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>IPM</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="/scripts/script.js"></script>
+  </head>
+  <body>
+    <form class='custom-form' onsubmit="return validateForm()">
+      <label for="email">Adres e-mail</label>
+      <input type="email" id="email" placeholder="example@example.com">
+
+      <label for="postal_code">Kod pocztowy</label>
+      <input type="text" id="postal_code" placeholder="91-144">
+
+      <label for="nip">NIP</label>
+      <input type="text" id="nip" placeholder="107-41-86-177">
+
+      <label for="card_id">Numer dowodu</label>
+      <input type="text" id="card_id" placeholder="ACZ139495">
+
+      <label for="ipv4_address">Adres ipv4</label>
+      <input type="text" id="ipv4_address">
+
+      <label for="www">Strona WWW</label>
+      <input type="text" id="www" placeholder="https://www.example.com">
+
+      <label for="path">Ścieżka do pliku</label>
+      <input type="text" id="path" placeholder="C:\">
+
+      <label for="path_2">Ścieżka do pliku (znaki)</label>
+      <input type="text" id="path_2">
+
+      <label for="ipv6_address">Adres ipv6</label>
+      <input type="text" id="ipv6_address">
+
+      <label for="phone">Numer telefonu</label>
+      <input type="text" id="phone" placeholder="730-123-274">
+
+      <input class='custom-form-submit-button' type="submit" value="Wyślij">
+    </form>
+  </body>
+</html>
+
+
+
+<!--
+1) adres email
+2) kod pocztowy
+3) numer nip (z kreskami)
+4) numer dowodu
+5) adres ipv4
+6) strona www
+7a) ścieżka litera dysku:\katalog systemu (windows, winnt, win, dos, msdos)\katalog podrzędny (np. C:\windows\temp lub d:\msdos).
+7b) to samo, co w 7a, ale ma pozwalać na użycie zarówno dużych, jak i małych liter (Windows,windows,WinDowS)
+8) ścieżka do pliku w katalogu /etc/ (np. /etc/passwd, /etc/hosts, itp)
+9) adres ipv6
+10) Numer telefonu
+-->
