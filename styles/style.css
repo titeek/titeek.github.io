@@ -6,16 +6,16 @@
   padding: 4px;
 }
 
-.custom-form > input:default {
-  border: 1px solid #000000;
-}
-
-.custom-form > .input-valid {
+.custom-form > input:valid {
   border: 1px solid green;
 }
 
-.custom-form > .input-invalid  {
+.custom-form > input:invalid {
   border: 1px solid red;
+}
+
+.custom-form > input:placeholder-shown {
+  border: 1px solid #000000;
 }
 
 .custom-form > label {
