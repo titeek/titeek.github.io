@@ -29,13 +29,16 @@
       <input type="url" id="www" placeholder="https://www.example.com" pattern="https://.*">
 
       <label for="path">Ścieżka do pliku</label>
-      <input type="text" id="path" placeholder="C:\windows\temp" pattern="[a-zA-Z]:(\[a-z]+)+">
+      <input type="text" id="path" placeholder="C:\windows\temp" pattern="^[a-zA-Z]:\\(windows|winnt|win|dos|msdos)\\?[a-z]*">
 
-      <label for="path_2">Ścieżka do pliku (znaki)</label>
-      <input type="text" id="path_2" placeholder="C:\wiNdowS\temP">
+      <label for="path_2">Ścieżka do pliku (duże znaki)</label>
+      <input type="text" id="path_2" placeholder="C:\windows\temP" pattern="^[a-zA-Z]:\\(windows|winnt|win|dos|msdos)\\?[a-zA-Z]*">
 
       <label for="ipv6_address">Adres ipv6</label>
       <input type="text" id="ipv6_address" placeholder="2001:0db8:85a3:0000:0000:8a2e:0370:7334" pattern="^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$">
+
+      <label for="path_catalog"></label>Ścieżka do pliku w katalogu</label><br>
+      <input type="text" id="path_catalog" placeholder="/etc/passwd" pattern="^(/etc/).*">
 
       <label for="phone">Numer telefonu</label>
       <input type="text" id="phone" placeholder="730-123-274" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}">
