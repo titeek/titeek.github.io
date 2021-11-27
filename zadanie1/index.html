@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>IPM - zadanie 1</title>
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+    <form class='custom-form'>
+      <label for="email">Adres e-mail</label>
+      <input type="email" id="email" placeholder="example@example.com">
+
+      <label for="postal_code">Kod pocztowy</label>
+      <input type="text" id="postal_code" placeholder="91-144" pattern="[0-9]{2}[-][0-9]{3}">
+
+      <label for="nip">NIP</label>
+      <input type="text" id="nip" placeholder="107-41-86-177" pattern="[0-9]{3}[-][0-9]{2}[-][0-9]{2}[-][0-9]{3}">
+
+      <label for="card_id">Numer dowodu</label>
+      <input type="text" id="card_id" placeholder="ACZ 139495"  pattern="[A-Za-z]{3} [0-9]{6}">
+
+      <label for="ipv4_address">Adres ipv4</label>
+      <input type="text" id="ipv4_address" placeholder="192.168.0.1" pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" maxlength="15" minlength="7">
+
+      <label for="www">Strona WWW</label>
+      <input type="url" id="www" placeholder="https://www.example.com" pattern="https://.*">
+
+      <label for="path">Ścieżka do pliku</label>
+      <input type="text" id="path" placeholder="C:\windows\temp" pattern="^[a-zA-Z]:\\(windows|winnt|win|dos|msdos)\\?[a-z]*">
+
+      <label for="path_2">Ścieżka do pliku (duże znaki)</label>
+      <input type="text" id="path_2" placeholder="C:\windows\temP" pattern="^[a-zA-Z]:\\(windows|winnt|win|dos|msdos)\\?[a-zA-Z]*">
+
+      <label for="ipv6_address">Adres ipv6</label>
+      <input type="text" id="ipv6_address" placeholder="2001:0db8:85a3:0000:0000:8a2e:0370:7334" pattern="^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$">
+
+      <label for="path_catalog"></label>Ścieżka do pliku w katalogu</label><br>
+      <input type="text" id="path_catalog" placeholder="/etc/passwd" pattern="^(/etc/).*">
+
+      <label for="phone">Numer telefonu</label>
+      <input type="text" id="phone" placeholder="730-123-274" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}">
+    </form>
+  </body>
+</html>
