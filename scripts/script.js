@@ -28,5 +28,14 @@ function validateForm() {
     nip.className="input-valid";
   }
 
+  let cardId = document.querySelector('#card_id');
+  const cardIdRegexp = new RegExp('[A-Za-z]{3} [0-9]{6}');
+  if (!cardId.value.match(cardIdRegexp) || !cardId.value) {
+    cardId.className="input-invalid";
+    isValidate = false;
+  } else {
+    cardId.className="input-valid";
+  }
+
   return false;
 }
