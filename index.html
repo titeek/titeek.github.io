@@ -23,7 +23,7 @@
       <input type="text" id="card_id" placeholder="ACZ 139495"  pattern="[A-Za-z]{3} [0-9]{6}">
 
       <label for="ipv4_address">Adres ipv4</label>
-      <input type="text" id="ipv4_address" placeholder="192.168.0.1">
+      <input type="text" id="ipv4_address" placeholder="192.168.0.1" pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" maxlength="15" minlength="7">
 
       <label for="www">Strona WWW</label>
       <input type="url" id="www" placeholder="https://www.example.com" pattern="https://.*">
