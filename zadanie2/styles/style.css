@@ -4,6 +4,16 @@
   border-radius: 4px;
   border: 1px solid #000000;
   padding: 4px;
+  min-width: 180px;
+}
+
+.custom-form > label, .custom-form-zad-2 > label {
+  display: block;
+  margin-bottom: 2px;
+}
+
+#color {
+  min-width: 190px;
 }
 
 .custom-form > input:valid {
@@ -16,9 +26,4 @@
 
 .custom-form > input:placeholder-shown {
   border: 1px solid #000000;
-}
-
-.custom-form > label, .custom-form-zad-2 > label {
-  display: block;
-  margin-bottom: 2px;
 }
