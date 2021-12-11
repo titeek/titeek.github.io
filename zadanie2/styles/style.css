@@ -1,0 +1,24 @@
+.custom-form > input, .custom-form-zad-2 > input {
+  display: block;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  border: 1px solid #000000;
+  padding: 4px;
+}
+
+.custom-form > input:valid {
+  border: 1px solid green;
+}
+
+.custom-form > input:invalid {
+  border: 1px solid red;
+}
+
+.custom-form > input:placeholder-shown {
+  border: 1px solid #000000;
+}
+
+.custom-form > label, .custom-form-zad-2 > label {
+  display: block;
+  margin-bottom: 2px;
+}
