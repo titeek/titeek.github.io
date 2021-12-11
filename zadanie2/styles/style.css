@@ -25,7 +25,6 @@
   display: inline-block !important;
 }
 
-
 .custom-form > input:valid {
   border: 1px solid green;
 }
