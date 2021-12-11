@@ -20,7 +20,17 @@
       <input type="date" id="date" >
 
       <label for="date_with_constraints">Data limitująca do dni pracujących w tym tygodniu</label>
-      <input type="date" id="date_with_constraints" min="2021-12-06" max="2021-12-10">
+      <input type="date" id="date_with_constraints" min="2021-12-06" max="2021-12-10" >
+
+      <label for="time_12">Czas w formacie 12 H</label>
+      <input type="time" id="time_12" min="01:00" max="12:59" >
+      <select>
+        <option>PM</option>
+        <option>AM</option>
+      </select>
+
+      <label for="time_24">Czas w formacie 24 H</label>
+      <input type="time" id="time_24" min="00:00" max="23:59">
 
       <label for="color">Kolor</label>
       <input type="color" id="color" >

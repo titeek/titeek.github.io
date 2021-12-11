@@ -7,20 +7,30 @@
   min-width: 180px;
 }
 
+.custom-form-zad-2 > select {
+  margin-bottom: 8px;
+  border-radius: 4px;
+  border: 1px solid #000000;
+  padding: 4px;
+  min-width: 30px;
+  min-height: 30px;
+}
+
 .custom-form > label, .custom-form-zad-2 > label {
   display: block;
   margin-bottom: 2px;
 }
 
-#color {
-  min-width: 190px;
+#time_12 {
+  display: inline !important;
 }
+
 
 .custom-form > input:valid {
   border: 1px solid green;
 }
 
-.custom-form > input:invalid {
+.custom-form > input:invalid, .custom-form-zad-2 > input:invalid {
   border: 1px solid red;
 }
 
