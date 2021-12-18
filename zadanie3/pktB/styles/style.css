@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+#tetrisSection {
+  flex-grow: 4;
+  background-color: red;
+}
+
+#buttonSection {
+  flex-grow: 1;
+}
+
+#generateButton {
+  width: 100%;
+  height: 100%;
+}
