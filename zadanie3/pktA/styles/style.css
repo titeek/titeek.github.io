@@ -1,3 +1,23 @@
 #list {
   outline: none;
+  list-style: none;
+  counter-reset: custom-counter;
+}
+
+#list > li {
+  margin: 8px;
+  counter-increment: custom-counter;
+}
+
+#list > li::before {
+  display: inline-block;
+  content: counter(custom-counter);
+  text-align: center;
+  background: blueviolet;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  margin-right: 8px;
+  line-height: 32px;
 }
