@@ -6,15 +6,21 @@ body {
   display: flex;
   flex-direction: row;
   height: 100vh;
+  width: 100vw;
 }
 
 #tetrisSection {
-  flex-grow: 4;
-  background-color: red;
+  width: 80%;
+  background-color: #c3c3c3;
+}
+
+#canvas {
+  height: 100%;
+  width: 100%;
 }
 
 #buttonSection {
-  flex-grow: 1;
+  width: 20%;
 }
 
 #generateButton {
