@@ -87,32 +87,30 @@ buttonGenerate.addEventListener("click", () => {
         return;
     }
 
+    let collision = false;
     mouseX = parseInt(e.clientX - canvasOffsetX);
     mouseY = parseInt(e.clientY - canvasOffsetY);
 
-    for (let i = 0; i < blocks.length; i++) {
-        let block = blocks[i];
-        let collision = false;
-        drawBlock(block);
-        if (ctx.isPointInPath(lastX, lastY) && block === elementDragged) {
-          blocks.forEach(block => {
-            if(block.x < mouseX && mouseX < block.x + block.width && block.y < mouseY && mouseY < block.y + block.height) {
-              collision = true;
-            }
-          });
-          if(!collision) {
-            block.x += (mouseX - lastX);
-            block.y += (mouseY - lastY);
-          }
-        }
+    drawBlock(elementDragged);
+
+    if (ctx.isPointInPath(lastX, lastY)) {
+      collision = blocks.find(block => block !== elementDragged
+          && block.x <= elementDragged.x + elementDragged.width && elementDragged.x <= block.x + block.width
+          && block.y <= elementDragged.y + elementDragged.height && elementDragged.y <= block.y + block.height) ? true : false;
+
+      if(!collision) {
+        elementDragged.x += (mouseX - lastX);
+        elementDragged.y += (mouseY - lastY);
+      }
     }
+
     lastX = mouseX;
     lastY = mouseY;
     drawAllBlock();
   }
 
   const initialFunction = () => {
-    makeBlock(30, 30, 25, 25, color);
+    makeBlock(30, 30, 60, 60, color);
     drawAllBlock();
   }
 
