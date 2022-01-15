@@ -12,8 +12,6 @@ const getRandomColor = () => {
 
 let lastId = 0;
 
-const color = getRandomColor();
-
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 
@@ -30,7 +28,7 @@ let lastY = 0;
 let elementDragged = null;
 
 buttonGenerate.addEventListener("click", () => {
-
+  const color = getRandomColor();
   const makeBlock = (x, y, width, height, fill) => {
     const block = {
       id: lastId,
@@ -88,7 +86,7 @@ buttonGenerate.addEventListener("click", () => {
     for (let i = 0; i < blocks.length; i++) {
         let block = blocks[i];
         drawBlock(block);
-        if (ctx.isPointInPath(lastX, lastY)) {
+        if (ctx.isPointInPath(lastX, lastY) && block === elementDragged) {
           block.x += (mouseX - lastX);
           block.y += (mouseY - lastY);
         }
