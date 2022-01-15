@@ -67,10 +67,6 @@ buttonGenerate.addEventListener("click", () => {
     mouseY = parseInt(e.clientY - canvasOffsetY);
 
     elementDragged = blocks.find(block => block.x < mouseX && mouseX < block.x + block.width && block.y < mouseY && mouseY < block.y + block.height)
-    if(elementDragged) {
-      elementDragged.xClicked = mouseX - elementDragged.x
-      elementDragged.yClicked = mouseY - elementDragged.y
-    }
     lastX = mouseX;
     lastY = mouseY;
   }
@@ -90,13 +86,15 @@ buttonGenerate.addEventListener("click", () => {
     let collision = false;
     mouseX = parseInt(e.clientX - canvasOffsetX);
     mouseY = parseInt(e.clientY - canvasOffsetY);
+    shiftX = (mouseX - lastX) > 0 ? mouseX - lastX + 1 : mouseX - lastX - 1;
+    shiftY = (mouseY - lastY) > 0 ? mouseY - lastY + 1 : mouseY - lastY - 1;
 
     drawBlock(elementDragged);
 
     if (ctx.isPointInPath(lastX, lastY)) {
       collision = blocks.find(block => block !== elementDragged
-          && block.x <= elementDragged.x + elementDragged.width && elementDragged.x <= block.x + block.width
-          && block.y <= elementDragged.y + elementDragged.height && elementDragged.y <= block.y + block.height) ? true : false;
+        && block.x <= elementDragged.x + elementDragged.width + shiftX && elementDragged.x - shiftX <= block.x + block.width
+        && block.y <= elementDragged.y + elementDragged.height + shiftY && elementDragged.y - shiftY <= block.y + block.height) ? true : false;
 
       if(!collision) {
         elementDragged.x += (mouseX - lastX);
@@ -106,6 +104,7 @@ buttonGenerate.addEventListener("click", () => {
 
     lastX = mouseX;
     lastY = mouseY;
+
     drawAllBlock();
   }
 
