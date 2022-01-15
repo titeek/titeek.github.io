@@ -10,32 +10,37 @@ const getRandomColor = () => {
   return color;
 }
 
+let lastId = 0;
+
+const color = getRandomColor();
+
+const canvas = document.querySelector("#canvas");
+const ctx = canvas.getContext("2d");
+
+const canvasWidth = parseFloat(getComputedStyle(canvas).width);
+const canvasHeight = parseFloat(getComputedStyle(canvas).height);
+const canvasOffsetX = canvas.offsetLeft;
+const canvasOffsetY = canvas.offsetTop;
+
+ctx.canvas.width = canvasWidth;
+ctx.canvas.height = canvasHeight;
+
+let lastX = 0;
+let lastY = 0;
+let elementDragged = null;
+
 buttonGenerate.addEventListener("click", () => {
-  const color = getRandomColor();
-
-  const canvas = document.querySelector("#canvas");
-  const ctx = canvas.getContext("2d");
-
-  const canvasWidth = parseFloat(getComputedStyle(canvas).width);
-  const canvasHeight = parseFloat(getComputedStyle(canvas).height);
-  const canvasOffsetX = canvas.offsetLeft;
-  const canvasOffsetY = canvas.offsetTop;
-
-  ctx.canvas.width = canvasWidth;
-  ctx.canvas.height = canvasHeight;
-
-  let isDragging = false;
-  let lastX = 0;
-  let lastY = 0;
 
   const makeBlock = (x, y, width, height, fill) => {
     const block = {
+      id: lastId,
       x: x,
       y: y,
       width: width,
       height: height,
       fill: fill
     }
+    lastId = lastId + 1;
     blocks.push(block);
   }
 
@@ -61,20 +66,20 @@ buttonGenerate.addEventListener("click", () => {
     mouseX = parseInt(e.clientX - canvasOffsetX);
     mouseY = parseInt(e.clientY - canvasOffsetY);
 
+    elementDragged = blocks.find(block => block.x < mouseX && mouseX < block.x + block.width && block.y < mouseY && mouseY < block.y + block.height)
     lastX = mouseX;
     lastY = mouseY;
-    isDragging = true;
   }
 
   const customMouseUp = e => {
     mouseX = parseInt(e.clientX - canvasOffsetX);
     mouseY = parseInt(e.clientY - canvasOffsetY);
 
-    isDragging = false;
+    elementDragged = null;
   }
 
   const customMouseMove = e => {
-    if (!isDragging) {
+    if (!elementDragged) {
         return;
     }
 
