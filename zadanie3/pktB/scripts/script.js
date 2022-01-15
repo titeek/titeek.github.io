@@ -26,6 +26,8 @@ ctx.canvas.height = canvasHeight;
 let lastX = 0;
 let lastY = 0;
 let elementDragged = null;
+const blockedX = [];
+const blockedY = [];
 
 buttonGenerate.addEventListener("click", () => {
   const color = getRandomColor();
@@ -45,7 +47,7 @@ buttonGenerate.addEventListener("click", () => {
   const drawAllBlock = () => {
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
     for (let i = 0; i < blocks.length; i++) {
-      let block = blocks[i]
+      let block = blocks[i];
       drawBlock(block);
       ctx.fillStyle = block.fill;
       ctx.fill();
@@ -65,6 +67,10 @@ buttonGenerate.addEventListener("click", () => {
     mouseY = parseInt(e.clientY - canvasOffsetY);
 
     elementDragged = blocks.find(block => block.x < mouseX && mouseX < block.x + block.width && block.y < mouseY && mouseY < block.y + block.height)
+    if(elementDragged) {
+      elementDragged.xClicked = mouseX - elementDragged.x
+      elementDragged.yClicked = mouseY - elementDragged.y
+    }
     lastX = mouseX;
     lastY = mouseY;
   }
@@ -83,12 +89,21 @@ buttonGenerate.addEventListener("click", () => {
 
     mouseX = parseInt(e.clientX - canvasOffsetX);
     mouseY = parseInt(e.clientY - canvasOffsetY);
+
     for (let i = 0; i < blocks.length; i++) {
         let block = blocks[i];
+        let collision = false;
         drawBlock(block);
         if (ctx.isPointInPath(lastX, lastY) && block === elementDragged) {
-          block.x += (mouseX - lastX);
-          block.y += (mouseY - lastY);
+          blocks.forEach(block => {
+            if(block.x < mouseX && mouseX < block.x + block.width && block.y < mouseY && mouseY < block.y + block.height) {
+              collision = true;
+            }
+          });
+          if(!collision) {
+            block.x += (mouseX - lastX);
+            block.y += (mouseY - lastY);
+          }
         }
     }
     lastX = mouseX;
