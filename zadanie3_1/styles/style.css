@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+}
+
+#tetrisSection {
+  width: 80%;
+  background-color: #c3c3c3;
+}
+
+#canvas {
+  height: 100%;
+  width: 100%;
+}
+
+#buttonSection {
+  width: 20%;
+}
+
+#generateButton {
+  width: 100%;
+  height: 100%;
+}
